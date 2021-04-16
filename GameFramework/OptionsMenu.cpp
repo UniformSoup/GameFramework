@@ -13,9 +13,9 @@ void OptionsMenu::update(const Timing::duration& elapsed)
 
 		case sf::Event::MouseMoved:
 		case sf::Event::MouseButtonPressed:
+			back.update(e);
 		case sf::Event::MouseButtonReleased:
 			option.update(e);
-			back.update(e);
 			break;
 		}
 	}

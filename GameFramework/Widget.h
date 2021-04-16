@@ -9,7 +9,8 @@ protected:
 
 	virtual void centerText() = 0;
 	inline bool isOver(const int& x, const int& y, const sf::RectangleShape& r) const;
-	Widget(const std::string& name, const sf::Font& f, const unsigned int& charsz);
+	Widget(const std::string& name, const sf::Font& f, const unsigned int& charsz)
+		: text(name, f, charsz) { text.setFillColor(sf::Color::Black); }
 
 public:
 	virtual void draw(sf::RenderWindow& window) = 0;
@@ -20,6 +21,10 @@ public:
 	
 	virtual unsigned int getCharSize() const { return text.getCharacterSize(); };
 	virtual void setCharSize(const unsigned int& charsz) = 0;
+
+	inline void setTextColour(const sf::Color& c) { text.setFillColor(c); };
+	inline sf::Color getTextColour() const { return text.getFillColor(); };
+
 };
 
 inline bool Widget::isOver(const int& x, const int& y, const sf::RectangleShape& r) const

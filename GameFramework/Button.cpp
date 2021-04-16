@@ -34,9 +34,9 @@ void Button::update(const sf::Event& e)
 	if (e.type == sf::Event::MouseButtonPressed)
 		isPressed = isOver(e.mouseButton.x, e.mouseButton.y, r);
 	else if (e.type == sf::Event::MouseMoved && isOver(e.mouseMove.x, e.mouseMove.y, r))
-		r.setFillColor(sf::Color(128, 128, 128));
+		r.setFillColor(sf::Color(colour.r / 2U, colour.g / 2U, colour.b / 2U));
 	else
-		r.setFillColor(sf::Color::White);
+		r.setFillColor(colour);
 }
 
 void Button::setText(const std::string& s)

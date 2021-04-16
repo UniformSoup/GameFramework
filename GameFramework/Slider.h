@@ -9,6 +9,7 @@ private:
 	bool isHeld = false;
 	mutable bool changed = false;
 	sf::RectangleShape notch, bar, rect;
+	sf::Color colour = sf::Color::White;
 
 	virtual void centerText();
 

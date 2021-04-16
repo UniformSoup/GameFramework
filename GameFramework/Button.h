@@ -8,6 +8,7 @@
 class Button : public Widget {
 private:
 	sf::RectangleShape r;
+	sf::Color colour = sf::Color::White;
 	bool isPressed = false;
 	void centerText();
 

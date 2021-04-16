@@ -54,13 +54,13 @@ void Slider::update(const sf::Event& e)
 		}
 		else if (isOver(e.mouseMove.x, e.mouseMove.y, rect))
 		{
-			notch.setFillColor(sf::Color(128, 128, 128));
-			bar.setFillColor(sf::Color(128, 128, 128));
+			notch.setFillColor(sf::Color(colour.r / 2U, colour.g / 2U, colour.b / 2U));
+			bar.setFillColor(sf::Color(colour.r / 2U, colour.g / 2U, colour.b / 2U));
 		}
 		else
 		{
-			notch.setFillColor(sf::Color::White);
-			bar.setFillColor(sf::Color::White);
+			notch.setFillColor(colour);
+			bar.setFillColor(colour);
 		}
 	}
 }
