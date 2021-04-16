@@ -159,6 +159,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionsMenu.h" />
     <ClInclude Include="Slider.h" />
+    <ClInclude Include="Timing.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
