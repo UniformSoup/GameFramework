@@ -1,6 +1,7 @@
 #pragma once
 #include "Menu.h"
 #include "GameState.h"
+#include <assert.h>
 
 class Game
 {
@@ -13,8 +14,8 @@ public:
 	inline bool isPlaying() const { return window.isOpen(); };
 	inline void update() { states.top()->update(); };
 	inline void render() { states.top()->render(); };
-	inline void run() { while (window.isOpen()) { update(); render(); } }
-	// you should probably add a timer opr something here
+	inline void run(); 
+	// you should probably add a timer or something here
 
 	Game()
 	{
