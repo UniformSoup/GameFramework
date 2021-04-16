@@ -21,7 +21,7 @@ void OptionsMenu::update()
 	}
 
 	if (option.hasChanged())
-		option.setText("Option: " + std::to_string(option.getValue()));
+		option.setText("Slider: " + std::to_string(option.getValue()));
 		//std::cout << "Well Done. You clicked the option.\n";
 
 	if (back.pressed())
