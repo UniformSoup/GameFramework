@@ -13,14 +13,13 @@ inline void Button::centerText()
 }
 
 Button::Button(const std::string& name, const sf::Font& f, const float &x, const float& y, const float& w, const float& h, const unsigned int& charsz)
-	: r(sf::Vector2f(w, h)), text(name, f, charsz)
+	: r(sf::Vector2f(w, h)), Widget(name,f, charsz)
 {
 	r.setPosition(sf::Vector2f(x, y));
 	r.setFillColor(sf::Color::White);
 	r.setOutlineColor(sf::Color::Black);
 	r.setOutlineThickness(5.f);
 
-	text.setFillColor(sf::Color::Black);
 	centerText();
 }
 
