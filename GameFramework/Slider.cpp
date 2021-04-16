@@ -31,13 +31,14 @@ void Slider::update(const sf::Event& e)
 		{
 			notch.setPosition(sf::Vector2f(e.mouseButton.x, notch.getPosition().y));
 			value = (notch.getPosition().x - rect.getPosition().x) / rect.getSize().x;
-			changed = true;
-			isHeld = true;
+			changed = true; isHeld = true;
 		}
 	}
+
 	else if (e.type == sf::Event::MouseButtonReleased && e.mouseButton.button == sf::Mouse::Left)
 		isHeld = false;
-	if (e.type == sf::Event::MouseMoved)
+
+	else if (e.type == sf::Event::MouseMoved)
 	{
 		if (isHeld)
 		{
@@ -61,9 +62,7 @@ void Slider::update(const sf::Event& e)
 			notch.setFillColor(sf::Color::White);
 			bar.setFillColor(sf::Color::White);
 		}
-
 	}
-
 }
 
 void Slider::setText(const std::string& s)
