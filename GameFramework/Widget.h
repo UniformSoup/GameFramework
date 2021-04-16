@@ -29,3 +29,4 @@ inline bool Widget::isOver(const int& x, const int& y, const sf::RectangleShape&
 		y >= r.getPosition().y &&
 		y <= r.getPosition().y + r.getSize().y);
 };
+

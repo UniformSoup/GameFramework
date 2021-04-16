@@ -17,5 +17,12 @@ public:
 	void update(const sf::Event& e);
 	void setText(const std::string& s);
 	void setCharSize(const unsigned int& charsz);
-	bool pressed();
+	inline bool pressed();
 };
+
+inline bool Button::pressed()
+{
+	bool temp = isPressed;
+	isPressed = false;
+	return temp;
+}

@@ -21,14 +21,23 @@ public:
 	void setText(const std::string& s);
 	void setCharSize(const unsigned int& charsz);
 
-	inline bool hasChanged() const { bool temp = changed; changed = false; return temp; };
+	inline bool hasChanged() const;
 	inline float getValue() const { return value; };
-	inline void setValue(const float& f)
+	inline void setValue(const float& f);
+};
+
+inline void Slider::setValue(const float& f)
+{
+	if (f >= 0 && f <= 1)
 	{
-		if (f >= 0 && f <= 1)
-		{
-			value = f;
-			notch.setPosition(sf::Vector2f(rect.getPosition().x + rect.getSize().x * value, notch.getPosition().y));
-		}
+		value = f; changed = true;
+		notch.setPosition(sf::Vector2f(rect.getPosition().x + rect.getSize().x * value, notch.getPosition().y));
 	}
+}
+
+inline bool Slider::hasChanged() const
+{
+	bool temp = changed;
+	changed = false;
+	return temp;
 };

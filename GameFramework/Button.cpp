@@ -39,13 +39,6 @@ void Button::update(const sf::Event& e)
 		r.setFillColor(sf::Color::White);
 }
 
-bool Button::pressed()
-{
-	bool temp = isPressed;
-	isPressed = false;
-	return temp;
-}
-
 void Button::setText(const std::string& s)
 {
 	text.setString(s);
