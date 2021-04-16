@@ -10,7 +10,7 @@ namespace Timing
 	{
 		high_resolution_clock::time_point start;
 	public:
-		Clock() { start =high_resolution_clock::now(); }
+		Clock() { start = high_resolution_clock::now(); }
 		/* Returns the elapsed time since it was last called */
 		inline high_resolution_clock::duration operator()()
 		{
