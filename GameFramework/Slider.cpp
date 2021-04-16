@@ -29,7 +29,7 @@ void Slider::update(const sf::Event& e)
 			isHeld = true;
 		else if (!isHeld && isOver(e.mouseButton.x, e.mouseButton.y, bar))
 		{
-			notch.setPosition(sf::Vector2f(e.mouseButton.x, notch.getPosition().y));
+			notch.setPosition(sf::Vector2f(static_cast<float>(e.mouseButton.x), notch.getPosition().y));
 			value = (notch.getPosition().x - rect.getPosition().x) / rect.getSize().x;
 			changed = true; isHeld = true;
 		}
@@ -47,7 +47,7 @@ void Slider::update(const sf::Event& e)
 			else if (e.mouseMove.x > rect.getPosition().x + rect.getSize().x)
 				notch.setPosition(rect.getPosition().x + rect.getSize().x, notch.getPosition().y);
 			else
-				notch.setPosition(e.mouseMove.x, notch.getPosition().y);
+				notch.setPosition(static_cast<float>(e.mouseMove.x), notch.getPosition().y);
 
 			value = (notch.getPosition().x - rect.getPosition().x) / rect.getSize().x;
 			changed = true;
@@ -83,12 +83,12 @@ Slider::Slider(const std::string& name, const sf::Font& f, const float& value, c
 	rect.setPosition(sf::Vector2f(x, y));
 	// notch width is w/20, notch height is h/2, bar height is h/6. 
 	notch.setOrigin(sf::Vector2f(w / 40.f, h / 4.0f));
-	notch.setPosition(sf::Vector2f(x + w*value, y +  3.0*h/4.0f));
+	notch.setPosition(sf::Vector2f(x + w*value, y +  3.f*h/4.f));
 	notch.setFillColor(sf::Color::White);
 	notch.setOutlineColor(sf::Color::Black);
 	notch.setOutlineThickness(5.f);
 	
-	bar.setPosition(sf::Vector2f(x, y + 2 * h / 3.0f));
+	bar.setPosition(sf::Vector2f(x, y + 2 * h / 3.f));
 	bar.setFillColor(sf::Color::White);
 	bar.setOutlineColor(sf::Color::Black);
 	bar.setOutlineThickness(5.f);
