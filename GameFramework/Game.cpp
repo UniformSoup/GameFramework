@@ -4,9 +4,9 @@ void Game::run()
 { 
 	while (window.isOpen())
 	{ 
-		assert(!states.empty());
-		update();
-		render();
+		//assert(!states.empty());
+		states.top()->update(clock());
+		states.top()->render();
 	}
 }
 

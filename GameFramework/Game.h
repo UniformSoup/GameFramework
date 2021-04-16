@@ -3,8 +3,13 @@
 #include "GameState.h"
 #include <assert.h>
 
+#include "Timing.h"
+#include <chrono>
+
 #define FONTFILE "Assets/OCRAEXT.TTF"
 #define WINDOWTITLE "Generic Game Title"
+
+
 
 class Game
 {
@@ -13,13 +18,11 @@ private:
 	std::stack<GameState*> states;
 	sf::Font f;
 	sf::Clock clk;
+	Timing::Clock clock;
 
 public:
 	inline bool isPlaying() const { return window.isOpen(); };
-	inline void update() { states.top()->update(); };
-	inline void render() { states.top()->render(); };
 	void run(); 
-	// you should probably add a timer or something here
 
 	Game(); ~Game();
 };

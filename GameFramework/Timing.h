@@ -4,18 +4,21 @@
 namespace Timing
 {
 	using namespace std::chrono;
+	using duration = high_resolution_clock::duration;
+	using time_point = high_resolution_clock::time_point;
+	using clock = high_resolution_clock;
 
 	/* A clock class for getting the elapsed time */
 	class Clock
 	{
-		high_resolution_clock::time_point start;
+		time_point start;
 	public:
-		Clock() { start = high_resolution_clock::now(); }
+		Clock() { start = clock::now(); }
 		/* Returns the elapsed time since it was last called */
-		inline high_resolution_clock::duration operator()()
+		inline duration operator()()
 		{
-			auto duration = (high_resolution_clock::now() - start);
-			start = high_resolution_clock::now();
+			auto duration = (clock::now() - start);
+			start = clock::now();
 			return duration;
 		}
 	};
@@ -23,14 +26,14 @@ namespace Timing
 	/* A timer class */
 	class Timer
 	{
-		high_resolution_clock::time_point start, stop;
+		time_point m_start, m_stop;
 		bool isRunning = false;
 	public:
-		Timer() { stop = start = high_resolution_clock::now(); };
-		inline high_resolution_clock::duration operator()() const { return isRunning ? (high_resolution_clock::now() - start) : (stop - start); }
-		inline void restart() { start = high_resolution_clock::now(); isRunning = true; };
-		inline void start() { if (!isRunning) { start = high_resolution_clock::now(); isRunning = true; } };
-		inline void stop() { if (isRunning) { stop = high_resolution_clock::now(); isRunning = false; } };
+		Timer() { m_start = m_stop = clock::now(); };
+		inline duration operator()() const { return isRunning ? (clock::now() - m_start) : (m_stop - m_start); }
+		inline void restart() { m_start = clock::now(); isRunning = true; };
+		inline void start() { if (!isRunning) { m_start = clock::now(); isRunning = true; } };
+		inline void stop() { if (isRunning) { m_stop = clock::now(); isRunning = false; } };
 		inline bool running() const { return isRunning; };
 	};
 }

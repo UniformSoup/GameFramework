@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-void Menu::update()
+void Menu::update(const Timing::duration& elapsed)
 {
 	sf::Event e;
 	while (window->pollEvent(e))

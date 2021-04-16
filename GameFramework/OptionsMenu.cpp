@@ -1,6 +1,6 @@
 #include "OptionsMenu.h"
 
-void OptionsMenu::update()
+void OptionsMenu::update(const Timing::duration& elapsed)
 {
 	sf::Event e;
 	while (window->pollEvent(e))
@@ -29,6 +29,7 @@ void OptionsMenu::update()
 		states->pop();
 		delete this; // this returns to the main menu
 	}
+	std::cout << "Elapsed Time: " << elapsed.count()/(1000.f * 1000.f) << "ms.\n";
 };
 
 void OptionsMenu::render()
