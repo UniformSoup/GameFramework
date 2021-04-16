@@ -1,0 +1,18 @@
+#pragma once
+#include <SFML/Graphics.hpp>
+#include <stack>
+
+class GameState
+{
+protected: // anything that all of the differenet states need (ie a single font, or options) can be shared here.
+	sf::RenderWindow* window;
+	std::stack<GameState*>* states;
+	sf::Font* f;
+
+	GameState(sf::RenderWindow* t_window, std::stack<GameState*>* t_states, sf::Font* t_f) : window(t_window), states(t_states), f(t_f) {};
+	GameState(GameState* state) : window(state->window), states(state->states), f(state->f) {};
+
+public:
+	virtual void update() = 0;
+	virtual void render() = 0;
+};

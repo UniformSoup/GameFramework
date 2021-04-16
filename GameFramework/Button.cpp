@@ -1,0 +1,59 @@
+#include "Button.h"
+
+inline void Button::centerText()
+{
+	text.setOrigin(
+		text.getLocalBounds().left + text.getLocalBounds().width / 2.0f,
+		text.getLocalBounds().top + text.getLocalBounds().height / 2.0f
+	);
+	text.setPosition(
+		r.getPosition().x + r.getSize().x / 2.f,
+		r.getPosition().y + r.getSize().y / 2.f
+	);
+}
+
+Button::Button(const std::string& name, const sf::Font& f, const float &x, const float& y, const float& w, const float& h, const unsigned int& charsz)
+	: r(sf::Vector2f(w, h)), text(name, f, charsz)
+{
+	r.setPosition(sf::Vector2f(x, y));
+	r.setFillColor(sf::Color::White);
+	r.setOutlineColor(sf::Color::Black);
+	r.setOutlineThickness(5.f);
+
+	text.setFillColor(sf::Color::Black);
+	centerText();
+}
+
+void Button::draw(sf::RenderWindow& window)
+{
+	window.draw(r);
+	window.draw(text);
+}
+
+void Button::update(const sf::Event& e)
+{
+	if (e.type == sf::Event::MouseButtonPressed)
+		isPressed = isOver(e.mouseButton.x, e.mouseButton.y);
+	else if (e.type == sf::Event::MouseMoved && isOver(e.mouseMove.x, e.mouseMove.y))
+		r.setFillColor(sf::Color(128, 128, 128));
+	else
+		r.setFillColor(sf::Color::White);
+}
+
+inline bool Button::isOver(const int& x, const int& y) const
+{
+	return (x >= r.getPosition().x &&
+		x <= r.getPosition().x + r.getSize().x &&
+		y >= r.getPosition().y &&
+		y <= r.getPosition().y + r.getSize().y);
+}
+
+bool Button::pressed()
+{
+	if (isPressed)
+	{
+		isPressed = false;
+		return true;
+	}
+	return false;
+}
