@@ -56,3 +56,14 @@ bool Button::pressed()
 	}
 	return false;
 }
+
+void Button::setText(const std::string& s)
+{
+	text.setString(s);
+	centerText();
+}
+void Button::setCharSize(const unsigned int& charsz)
+{
+	text.setCharacterSize(charsz);
+	centerText();
+}
