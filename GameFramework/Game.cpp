@@ -13,7 +13,7 @@ void Game::run()
 Game::Game()
 {
 	f.loadFromFile(FONTFILE);
-	window.create(sf::VideoMode(960, 540), "Elliff is an Ape", sf::Style::Default ^ sf::Style::Resize);
+	window.create(sf::VideoMode(960, 540), WINDOWTITLE, sf::Style::Default ^ sf::Style::Resize);
 	states.push(new Menu(&window, &states, &f));
 }
 

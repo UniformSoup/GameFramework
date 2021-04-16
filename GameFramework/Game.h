@@ -4,6 +4,7 @@
 #include <assert.h>
 
 #define FONTFILE "Assets/OCRAEXT.TTF"
+#define WINDOWTITLE "Generic Game Title"
 
 class Game
 {
