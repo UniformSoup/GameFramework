@@ -24,7 +24,7 @@ void Menu::update()
 
 void Menu::render()
 {
-	window->clear();
+	window->clear(sf::Color::Magenta);
 	b.draw(*window);
 	window->display();
 }

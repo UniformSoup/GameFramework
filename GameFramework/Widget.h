@@ -8,7 +8,7 @@ protected:
 	sf::Text text;
 
 	virtual void centerText() = 0;
-	virtual bool isOver(const int& x, const int& y) const = 0;
+	inline bool isOver(const int& x, const int& y, const sf::RectangleShape& r) const;
 	Widget(const std::string& name, const sf::Font& f, const unsigned int& charsz);
 
 public:
@@ -20,7 +20,12 @@ public:
 	
 	virtual unsigned int getCharSize() const { return text.getCharacterSize(); };
 	virtual void setCharSize(const unsigned int& charsz) = 0;
+};
 
-	
-
+inline bool Widget::isOver(const int& x, const int& y, const sf::RectangleShape& r) const
+{
+	return (x >= r.getPosition().x &&
+		x <= r.getPosition().x + r.getSize().x &&
+		y >= r.getPosition().y &&
+		y <= r.getPosition().y + r.getSize().y);
 };

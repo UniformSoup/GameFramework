@@ -9,9 +9,7 @@ class Button : public Widget {
 private:
 	sf::RectangleShape r;
 	bool isPressed = false;
-
-	void centerText() override;
-	bool isOver(const int& x, const int& y) const;
+	void centerText();
 
 public:
 	Button(const std::string& name, const sf::Font& f, const float& x, const float& y, const float& w, const float& h, const unsigned int& charsz = 30U);

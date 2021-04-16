@@ -13,14 +13,16 @@ void OptionsMenu::update()
 
 		case sf::Event::MouseMoved:
 		case sf::Event::MouseButtonPressed:
+		case sf::Event::MouseButtonReleased:
 			option.update(e);
 			back.update(e);
 			break;
 		}
 	}
 
-	if (option.pressed())
-		std::cout << "Well Done. You clicked the option.\n";
+	if (option.hasChanged())
+		option.setText("Option: " + std::to_string(option.getValue()));
+		//std::cout << "Well Done. You clicked the option.\n";
 
 	if (back.pressed())
 	{
@@ -31,7 +33,7 @@ void OptionsMenu::update()
 
 void OptionsMenu::render()
 {
-	window->clear();
+	window->clear(sf::Color::Magenta);
 	back.draw(*window);
 	option.draw(*window);
 

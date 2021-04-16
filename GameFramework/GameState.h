@@ -9,7 +9,7 @@ protected: // anything that all of the differenet states need (ie a single font,
 	std::stack<GameState*>* states;
 	sf::Font* f;
 
-	GameState(sf::RenderWindow* t_window, std::stack<GameState*>* t_states, sf::Font* t_f) : window(t_window), states(t_states), f(t_f) {};
+	GameState(sf::RenderWindow* window, std::stack<GameState*>* states, sf::Font* f) : window(window), states(states), f(f) {};
 	GameState(GameState* state) { *this = *state; };
 
 public:
