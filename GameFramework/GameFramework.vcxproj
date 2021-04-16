@@ -153,22 +153,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Button.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionsMenu.h" />
-    <ClInclude Include="Slider.h" />
     <ClInclude Include="Timing.h" />
-    <ClInclude Include="Widget.h" />
+    <ClInclude Include="Widgets\Button.h" />
+    <ClInclude Include="Widgets\Slider.h" />
+    <ClInclude Include="Widgets\Widget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="OptionsMenu.cpp" />
-    <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="Widgets\Button.cpp" />
+    <ClCompile Include="Widgets\Slider.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

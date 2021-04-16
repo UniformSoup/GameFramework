@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Widgets">
+      <UniqueIdentifier>{b27677fd-e12d-4767-a1a5-ca965ef3ebf8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,20 +30,20 @@
     <ClInclude Include="OptionsMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Slider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Timing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Widgets\Button.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Widgets\Slider.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Widgets\Widget.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,8 +56,11 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Slider.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Widgets\Button.cpp">
+      <Filter>Header Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Widgets\Slider.cpp">
+      <Filter>Header Files\Widgets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

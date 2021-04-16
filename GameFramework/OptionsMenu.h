@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GameState.h"
-#include "Button.h"
-#include "Slider.h"
+#include "Widgets/Button.h"
+#include "Widgets/Slider.h"
 
 #include <iostream>
 
