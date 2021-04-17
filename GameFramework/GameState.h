@@ -4,7 +4,7 @@
 
 #include "Timing.h"
 
-struct GameData;
+struct GameData; // Forward Declaration to avoid including Game.h circularly
 
 class GameState
 {
