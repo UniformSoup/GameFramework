@@ -157,6 +157,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionsMenu.h" />
+    <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Timing.h" />
     <ClInclude Include="Widgets\Button.h" />
     <ClInclude Include="Widgets\Slider.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="OptionsMenu.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Widgets\Button.cpp" />
     <ClCompile Include="Widgets\Slider.cpp" />
   </ItemGroup>

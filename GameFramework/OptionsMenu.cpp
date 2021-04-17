@@ -1,14 +1,15 @@
 #include "OptionsMenu.h"
+#include "Game.h"
 
 void OptionsMenu::update(const Timing::duration& elapsed)
 {
 	sf::Event e;
-	while (window->pollEvent(e))
+	while (pdata->window.pollEvent(e))
 	{
 		switch (e.type)
 		{
 		case sf::Event::Closed:
-			window->close();
+			pdata->window.close();
 			break;
 
 		case sf::Event::MouseMoved:
@@ -25,18 +26,20 @@ void OptionsMenu::update(const Timing::duration& elapsed)
 		//std::cout << "Well Done. You clicked the option.\n";
 
 	if (back.pressed())
-	{
-		states->pop();
-		delete this; // this returns to the main menu
-	}
+		pdata->s.removeState();
+
 	std::cout << "Elapsed Time: " << elapsed.count()/(1000.f * 1000.f) << "ms.\n";
 };
 
 void OptionsMenu::render()
 {
-	window->clear(sf::Color::Magenta);
-	back.draw(*window);
-	option.draw(*window);
+	pdata->window.clear(sf::Color::Magenta);
+	back.draw(pdata->window);
+	option.draw(pdata->window);
 
-	window->display();
+	pdata->window.display();
 };
+
+OptionsMenu::OptionsMenu(GameData* pData)
+: GameState(pData), option("Slider", pdata->f, 0.5f, 100, 100, 760, 120), back("Go Back", pdata->f, 100, 320, 760, 120)
+{}

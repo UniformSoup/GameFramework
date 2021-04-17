@@ -1,27 +1,20 @@
 #include "Game.h"
+#include "Menu.h"
 
 void Game::run()
 { 
-	while (window.isOpen())
+	while (data.window.isOpen())
 	{ 
-		//assert(!states.empty());
-		states.top()->update(clock());
-		states.top()->render();
+		data.s.getCurrentState()->update(clock());
+		data.s.getCurrentState()->render();
+		data.s.updateState();
 	}
 }
 
 Game::Game()
 {
-	f.loadFromFile(FONTFILE);
-	window.create(sf::VideoMode(960, 540), WINDOWTITLE, sf::Style::Default ^ sf::Style::Resize);
-	states.push(new Menu(&window, &states, &f));
-}
-
-Game::~Game()
-{
-	while (!states.empty())
-	{
-		delete states.top();
-		states.pop();
-	}
+	data.f.loadFromFile(FONTFILE);
+	data.window.create(sf::VideoMode(960, 540), WINDOWTITLE, sf::Style::Default ^ sf::Style::Resize);
+	data.s.addState(new Menu(&data));
+	data.s.updateState();
 }

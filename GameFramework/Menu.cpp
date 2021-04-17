@@ -1,14 +1,16 @@
 #include "Menu.h"
+#include "Game.h"
+#include "OptionsMenu.h"
 
 void Menu::update(const Timing::duration& elapsed)
 {
 	sf::Event e;
-	while (window->pollEvent(e))
+	while (pdata->window.pollEvent(e))
 	{
 		switch (e.type)
 		{
 		case sf::Event::Closed:
-			window->close();
+			pdata->window.close();
 			break;
 
 		case sf::Event::MouseMoved:
@@ -19,12 +21,16 @@ void Menu::update(const Timing::duration& elapsed)
 	}
 
 	if (b.pressed())
-		states->push(new OptionsMenu(this));
+		pdata->s.addState(new OptionsMenu(pdata));
 }
 
 void Menu::render()
 {
-	window->clear(sf::Color::Magenta);
-	b.draw(*window);
-	window->display();
+	pdata->window.clear(sf::Color::Magenta);
+	b.draw(pdata->window);
+	pdata->window.display();
 }
+
+Menu::Menu(GameData* pData)
+: GameState(pData), b("Ask Someone Else Next Time", pdata->f, 100, 100, 760, 340)
+{}
