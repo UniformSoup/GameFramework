@@ -41,5 +41,5 @@ void OptionsMenu::render()
 };
 
 OptionsMenu::OptionsMenu(GameData* pData)
-: GameState(pData), option("Slider", pdata->f, 0.5f, 100, 100, 760, 120), back("Go Back", pdata->f, 100, 320, 760, 120)
+	: GameState(pData), option("Slider", pdata->f, 0.5f, { 100, 100, 760, 120 }), back("Go Back", pdata->f, { 100, 320, 760, 120 })
 {}

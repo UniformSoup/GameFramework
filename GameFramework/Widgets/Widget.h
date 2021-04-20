@@ -8,7 +8,7 @@ protected:
 	sf::Text text;
 
 	virtual void centerText() = 0;
-	inline bool isOver(const int& x, const int& y, const sf::RectangleShape& r) const;
+	inline bool isOver(const int& x, const int& y, const sf::FloatRect& r) const;
 	Widget(const std::string& name, const sf::Font& f, const unsigned int& charsz)
 		: text(name, f, charsz) { text.setFillColor(sf::Color::Black); }
 
@@ -27,11 +27,12 @@ public:
 
 };
 
-inline bool Widget::isOver(const int& x, const int& y, const sf::RectangleShape& r) const
+inline bool Widget::isOver(const int& x, const int& y, const sf::FloatRect& r) const
 {
-	return (x >= r.getPosition().x &&
-		x <= r.getPosition().x + r.getSize().x &&
-		y >= r.getPosition().y &&
-		y <= r.getPosition().y + r.getSize().y);
+	return r.contains(static_cast<float>(x), static_cast<float>(y));
+	/*(x >= r.left &&
+		x <= r.left + r.width &&
+		y >= r.top &&
+		y <= r.top + r.height);*/
 };
 

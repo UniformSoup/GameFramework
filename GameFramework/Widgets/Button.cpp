@@ -12,10 +12,10 @@ inline void Button::centerText()
 	);
 }
 
-Button::Button(const std::string& name, const sf::Font& f, const float &x, const float& y, const float& w, const float& h, const unsigned int& charsz)
-	: r(sf::Vector2f(w, h)), Widget(name,f, charsz)
+Button::Button(const std::string& name, const sf::Font& f, const sf::FloatRect& rect, const unsigned int& charsz)
+	: r(sf::Vector2f(rect.width, rect.height)), Widget(name,f, charsz)
 {
-	r.setPosition(sf::Vector2f(x, y));
+	r.setPosition(sf::Vector2f(rect.left, rect.top));
 	r.setFillColor(sf::Color::White);
 	r.setOutlineColor(sf::Color::Black);
 	r.setOutlineThickness(5.f);
@@ -32,8 +32,8 @@ void Button::draw(sf::RenderWindow& window)
 void Button::update(const sf::Event& e)
 {
 	if (e.type == sf::Event::MouseButtonPressed)
-		isPressed = isOver(e.mouseButton.x, e.mouseButton.y, r);
-	else if (e.type == sf::Event::MouseMoved && isOver(e.mouseMove.x, e.mouseMove.y, r))
+		isPressed = isOver(e.mouseButton.x, e.mouseButton.y, r.getGlobalBounds());
+	else if (e.type == sf::Event::MouseMoved && isOver(e.mouseMove.x, e.mouseMove.y, r.getGlobalBounds()))
 		r.setFillColor(sf::Color(colour.r / 2U, colour.g / 2U, colour.b / 2U));
 	else
 		r.setFillColor(colour);

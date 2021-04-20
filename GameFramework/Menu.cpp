@@ -32,5 +32,5 @@ void Menu::render()
 }
 
 Menu::Menu(GameData* pData)
-: GameState(pData), b("Ask Someone Else Next Time", pdata->f, 100, 100, 760, 340)
+	: GameState(pData), b("Ask Someone Else Next Time", pdata->f, { 100, 100, 760, 340 })
 {}
