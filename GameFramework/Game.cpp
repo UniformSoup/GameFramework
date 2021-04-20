@@ -1,12 +1,13 @@
 #include "Game.h"
 #include "Menu.h"
+#include "GameState.h"
 
 void Game::run()
 { 
 	while (data.window.isOpen())
 	{ 
-		data.s.getCurrentState()->update(clock());
-		data.s.getCurrentState()->render();
+		data.s.getCurrentState().update(clock());
+		data.s.getCurrentState().render();
 		data.s.updateState();
 	}
 }

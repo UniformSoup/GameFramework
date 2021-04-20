@@ -4,9 +4,9 @@ size_t StateMachine::size() const
 {
 	return states.size();
 }
-GameState* StateMachine::getCurrentState() const 
+GameState& StateMachine::getCurrentState() const 
 {
-	return states.top();
+	return *states.top();
 }
 void StateMachine::addState(GameState* s)
 {
