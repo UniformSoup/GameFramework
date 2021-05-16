@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stack>
-#include <exception>
 
 #include "GameState.h"
 
