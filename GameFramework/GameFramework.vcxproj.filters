@@ -65,8 +65,5 @@
     <ClCompile Include="Widgets\Slider.cpp">
       <Filter>Header Files\Widgets</Filter>
     </ClCompile>
-    <ClCompile Include="StateMachine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@
 struct GameData
 {
 	sf::RenderWindow window;
-	StateMachine s;
+	StateMachine<GameState> s;
 	sf::Font f;
 };
 
