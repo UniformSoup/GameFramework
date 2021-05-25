@@ -18,6 +18,8 @@ void OptionsMenu::update(const Timing::duration& elapsed)
 		case sf::Event::MouseButtonReleased:
 			option.update(e);
 			break;
+		default:
+			break;
 		}
 	}
 
