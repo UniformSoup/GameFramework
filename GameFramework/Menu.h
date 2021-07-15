@@ -13,5 +13,3 @@ public:
 	void update(const Timing::duration& elapsed);
 	void render();
 };
-
-

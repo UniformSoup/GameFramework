@@ -6,13 +6,12 @@
 class Slider : public Widget {
 private:
 	float value;
-	bool isHeld = false;
-	mutable bool changed = false;
+	bool isHeld = false, changed = false;
 	sf::RectangleShape notch, bar;
 	sf::FloatRect rect;
 	sf::Color colour = sf::Color::White;
 
-	virtual void centerText();
+	void centerText();
 
 public:
 	Slider(const std::string& name, const sf::Font& f, const float& value, const sf::FloatRect& rect, const unsigned int& charsz = 30U);
@@ -23,7 +22,7 @@ public:
 	void setText(const std::string& s);
 	void setCharSize(const unsigned int& charsz);
 
-	inline bool hasChanged() const;
+	inline bool hasChanged();
 	inline float getValue() const { return value; };
 	inline void setValue(const float& f);
 };
@@ -37,7 +36,7 @@ inline void Slider::setValue(const float& f)
 	}
 }
 
-inline bool Slider::hasChanged() const
+inline bool Slider::hasChanged()
 {
 	bool temp = changed;
 	changed = false;
