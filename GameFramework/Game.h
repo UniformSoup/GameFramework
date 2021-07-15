@@ -1,8 +1,6 @@
 #pragma once
 
-#include "StateMachine.h"
-#include "GameState.h"
-#include "Timing.h"
+#include "Utilities/GameState.h"
 #include "Menu.h"
 
 #define FONTFILE "Assets/OCRAEXT.TTF"

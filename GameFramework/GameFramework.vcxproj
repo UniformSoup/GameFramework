@@ -201,11 +201,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameState.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionsMenu.h" />
-    <ClInclude Include="StateMachine.h" />
-    <ClInclude Include="Timing.h" />
+    <ClInclude Include="Utilities\GameState.h" />
+    <ClInclude Include="Utilities\StateMachine.h" />
+    <ClInclude Include="Utilities\Timing.h" />
     <ClInclude Include="Widgets\Button.h" />
     <ClInclude Include="Widgets\Slider.h" />
     <ClInclude Include="Widgets\Widget.h" />

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameState.h"
+#include "Utilities/GameState.h"
 #include "Widgets/Button.h"
 #include "Widgets/Slider.h"
 

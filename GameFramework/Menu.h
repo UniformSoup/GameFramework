@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Widgets/Button.h"
-#include "GameState.h"
+#include "Utilities/GameState.h"
 #include "OptionsMenu.h"
 
 class Menu : public GameState

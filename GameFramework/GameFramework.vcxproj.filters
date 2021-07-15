@@ -5,45 +5,44 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Widgets">
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{e455cfed-dfbe-43a3-85dd-5cccf203a029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Widgets">
       <UniqueIdentifier>{b27677fd-e12d-4767-a1a5-ca965ef3ebf8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionsMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Timing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Widgets\Button.h">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Widgets\Slider.h">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Widgets\Widget.h">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="StateMachine.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Utilities\Timing.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\StateMachine.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\GameState.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsMenu.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -57,10 +56,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Widgets\Button.cpp">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Widgets</Filter>
     </ClCompile>
     <ClCompile Include="Widgets\Slider.cpp">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Widgets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
