@@ -3,7 +3,7 @@
 #include <stack>
 #include <memory>
 
-/* Simple StateMachine Class */
+/* Simple StateMachine Template Class */
 template <typename State>
 class StateMachine
 {
@@ -16,14 +16,14 @@ public:
 	State& getCurrentState() const { return *states.top(); }
 	void updateState();
 	void removeState() { flag = Flag::REMOVE; };
-	void addState(State* s)
+	void addState(std::shared_ptr<State>&& s)
 	{
-		newState = std::shared_ptr<State>(s);
+		newState = std::move(s);
 		flag = Flag::ADD;
 	}
-	void replaceState(State* s)
+	void replaceState(std::shared_ptr<State>&& s)
 	{
-		newState = std::shared_ptr<State>(s);
+		newState = std::move(s);
 		flag = Flag::REPLACE;
 	}
 };
@@ -46,7 +46,8 @@ void StateMachine<State>::updateState()
 	case Flag::REMOVE:
 		states.pop();
 		break;
-	default: break;
+	default:
+		break;
 	}
 
 	flag = Flag::CONTINUE;

@@ -4,8 +4,6 @@
 #include "Widgets/Button.h"
 #include "Widgets/Slider.h"
 
-#include <iostream>
-
 class OptionsMenu : public GameState
 {
 private:
@@ -13,7 +11,11 @@ private:
 	Slider option;
 
 public:
-	OptionsMenu(GameData* pData);
+	OptionsMenu(GameState* last) :
+		GameState(last),
+		option("Slider", pdata->f, 0.5f, { 100, 100, 760, 120 }),
+		back("Go Back", pdata->f, { 100, 320, 760, 120 })
+	{}
 	void update(const Timing::duration& elapsed);
 	void render();
 };

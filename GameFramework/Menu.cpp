@@ -1,6 +1,4 @@
 #include "Menu.h"
-#include "Game.h"
-#include "OptionsMenu.h"
 
 void Menu::update(const Timing::duration& elapsed)
 {
@@ -21,7 +19,7 @@ void Menu::update(const Timing::duration& elapsed)
 	}
 
 	if (b.pressed())
-		pdata->s.addState(new OptionsMenu(pdata));
+		s->addState(std::make_shared<OptionsMenu>(this));
 }
 
 void Menu::render()
@@ -30,7 +28,3 @@ void Menu::render()
 	b.draw(pdata->window);
 	pdata->window.display();
 }
-
-Menu::Menu(GameData* pData)
-	: GameState(pData), b("Here is a button", pdata->f, { 100, 100, 760, 340 })
-{}

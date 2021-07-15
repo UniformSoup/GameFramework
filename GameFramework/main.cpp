@@ -7,6 +7,6 @@
 
 int main()
 {
-	Game game; game.run();
-	return 0;
+	Game game;
+	return game.run();
 }
