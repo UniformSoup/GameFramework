@@ -1,6 +1,7 @@
 #pragma once
 
 #include "StateMachine.h"
+#include "GameState.h"
 #include "Timing.h"
 
 #define FONTFILE "Assets/OCRAEXT.TTF"

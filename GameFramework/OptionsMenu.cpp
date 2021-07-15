@@ -30,7 +30,7 @@ void OptionsMenu::update(const Timing::duration& elapsed)
 	if (back.pressed())
 		pdata->s.removeState();
 
-	std::cout << "Elapsed Time: " << elapsed.count()/(1000.f * 1000.f) << "ms.\n";
+	//std::cout << "Elapsed Time: " << elapsed.count()/(1000.f * 1000.f) << "ms.\n";
 };
 
 void OptionsMenu::render()

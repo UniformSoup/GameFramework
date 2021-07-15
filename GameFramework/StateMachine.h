@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stack>
+#include <memory>
 
 /* Simple StateMachine Class */
 template <typename State>
