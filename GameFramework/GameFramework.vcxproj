@@ -96,6 +96,18 @@
       <AdditionalLibraryDirectories>.\SFML\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;sfml-window-s-d.lib;sfml-main-d.lib;sfml-graphics-s-d.lib;freetype.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)SFML\bin\x86\openal32.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Move Openal32.dll to project directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -116,6 +128,18 @@
       <AdditionalLibraryDirectories>.\SFML\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;sfml-window-s.lib;sfml-main.lib;sfml-graphics-s.lib;freetype.lib;sfml-system-s.lib;sfml-audio-s.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)SFML\bin\x86\openal32.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Move Openal32.dll to project directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -124,13 +148,26 @@
       <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>.\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>.\SFML\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;sfml-window-s.lib;sfml-main-d.lib;sfml-graphics-s-d.lib;freetype.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;sfml-window-s-d.lib;sfml-main-d.lib;sfml-graphics-s-d.lib;freetype.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)SFML\bin\x64\openal32.dll" "$(TargetDir)"</Command>
+      <Message>Move Openal32.dll to project directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -151,6 +188,16 @@
       <AdditionalLibraryDirectories>.\SFML\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;sfml-window-s.lib;sfml-main.lib;sfml-graphics-s.lib;freetype.lib;sfml-system-s.lib;sfml-audio-s.lib;openal32.lib;flac.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)SFML\bin\x64\openal32.dll" "$(TargetDir)"</Command>
+      <Message>Move Openal32.dll to project directory</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
